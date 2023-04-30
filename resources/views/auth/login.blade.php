@@ -5,12 +5,12 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ isset($title) ?ucwords($title) : '' }} {{ __('messages.Login') }}</div>
+                <div class="card-header">{{ isset($title) ?ucwords($title) : '' }} Login</div>
                 <div class="card-body">
                     @isset($url)
-                        <form method="POST" action="{{ url($url.'/login') }}" aria-label="{{ __('messages.Login') }}">
+                        <form method="POST" action="{{ url($url.'/login') }}" aria-label="Login">
                             @else
-                                <form method="POST" action="{{ route('login') }}" aria-label="{{ __('messages.Login') }}">
+                                <form method="POST" action="{{ route('login') }}" aria-label="Login">
                                     @endisset
                                     @csrf
 

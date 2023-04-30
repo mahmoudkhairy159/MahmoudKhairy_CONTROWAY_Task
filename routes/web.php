@@ -20,4 +20,8 @@ Route::get('/', function () {
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::group(['middleware' => ['mustAdminVerified', 'auth:web']], function () {
+    Route::resource('products', 'ProductController')->only([
+        'index'
+    ]);
+    Route::post('/importProductsFile', 'ProductController@import')->name('products.import');
 });
